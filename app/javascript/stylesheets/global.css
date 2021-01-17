@@ -1,0 +1,209 @@
+body {
+    font-size: 16px;
+    color: #292929;
+    line-height: 1.7em;
+    font-weight: 400;
+    background: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-family: "Jost", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    transition: .3s;
+    color: #292929;
+}
+
+button,
+a:hover, a:focus, a:visited {
+    text-decoration: none;
+    outline: none !important;
+    transition: .3s;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    position: relative;
+    font-weight: 700;
+    margin: 0px;
+    background: none;
+    line-height: 1.2em;
+    font-family: "Jost", sans-serif;
+}
+
+h1 {
+    font-size: 52px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+h5 {
+    font-size: 20px;
+}
+
+h6 {
+    font-size: 18px;
+}
+
+input, button, select, textarea {
+    outline: none;
+}
+
+textarea {
+    overflow: hidden;
+}
+
+p {
+    position: relative;
+    font-family: "Jost", sans-serif;
+}
+
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    display: inline-block;
+    max-width: 100%;
+}
+
+ul, li {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+img {
+    display: inline-block;
+    max-width: 100%;
+}
+
+::selection {
+    background-color: #0E8A701a;
+    color: #28df99;
+}
+
+-moz-::selection {
+    background-color: #0E8A701a;
+    color: #28df99;
+}
+
+-webkit-::selection {
+    background-color: #0E8A701a;
+    color: #28df99;
+}
+
+-o-::selection {
+    background-color: #0E8A701a;
+    color: #28df99;
+}
+
+.page-wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    min-width: 300px;
+    overflow: hidden;
+}
+
+.btn.focus, .btn:focus {
+    box-shadow: none;
+}
+
+.border-0 {
+    border: 0px;
+}
+
+.radius-50 {
+    border-radius: 50px !important;
+}
+
+.centered {
+    text-align: center;
+}
+
+.site-form form h4 {
+    font-weight: 300;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.site-form form p {
+    font-family: "Jost", sans-serif;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.site-form form input, .site-form form textarea {
+    width: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+    color: #ffffff;
+    text-indent: 15px;
+    margin-bottom: 15px;
+    font-family: "Jost", sans-serif;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.site-form form input:focus, .site-form form textarea:focus {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.site-form form input::placeholder, .site-form form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.site-form form input {
+    height: 55px;
+}
+
+.site-form form select {
+    height: 55px;
+    background: #1C4256;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.site-form form input[type=checkbox] {
+    height: 20px;
+    width: 20px;
+}
+
+.site-form form select:focus {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    outline: none;
+    box-shadow: none;
+}
+
+.site-form form textarea {
+    text-indent: 0;
+    padding: 10px 15px;
+}
+
+.site-form form .extra-links {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.site-form form .extra-links a {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.site-form form .extra-links a:hover {
+    color: #28df99;
+}

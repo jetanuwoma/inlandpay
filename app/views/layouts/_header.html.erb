@@ -1,0 +1,42 @@
+
+  <header class="header-area blue-bg-2">
+        <nav class="navbar navbar-expand-lg main-menu">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="/">
+                     <%=image_tag('logo-2.png', class: "d-inline-block align-top")%>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="menu-toggle"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="/" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
+                        </li>
+                        <% if user_signed_in? %>
+                        <li class="nav-item"><a class="nav-link" href="how-it-works.html">Withdrawal</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" role="button" >Deposit</a>
+                    
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" role="button" >Transfer</a>
+                        </li>
+
+                        <% end %>
+                        <% unless user_signed_in? %>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <% end%>
+                    </ul>
+                    <%unless user_signed_in? %>
+                        <div class="header-btn justify-content-end">
+                            <%= link_to('Account Login', :new_user_session, class: 'bttn-small btn-fill' )%>
+                        </div>
+                    <%end%>
+                </div>
+            </div>
+        </nav>
+ </header><!--/Header Area-->
+    
