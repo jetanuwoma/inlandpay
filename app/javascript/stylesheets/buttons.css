@@ -1,0 +1,79 @@
+.bttn-mid {
+    position: relative;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 14px 40px;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.4s;
+    font-family: "Jost", sans-serif;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.bttn-small {
+    position: relative;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 28px;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.4s;
+    font-family: "Jost", sans-serif;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.bttn-mid i, .bttn-small i {
+    margin-right: 7px;
+}
+
+.btn-fill {
+    background: #28df99;
+    color: #263845;
+}
+
+.btn-fill:hover {
+    background: #ffd700;
+    color: #263845;
+}
+
+.bttn-mid.btn-emt {
+    padding: 12px 41px;
+}
+
+.btn-emt {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.05);
+}
+
+.btn-emt:hover {
+    color: #ffffff;
+    box-shadow: none;
+    background: #28df99;
+    border: 2px solid transparent;
+}
+
+.btn-wht {
+    background: #ffffff;
+    color: #28df99;
+    box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.05);
+}
+
+.btn-wht:hover {
+    background: #28df99;
+    color: #ffffff;
+}
+
+.btn-blu {
+    background: #003754;
+    color: #ffffff;
+    box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.05);
+}
+
+.btn-blu:hover {
+    background: #28df99;
+    color: #003754;
+}
