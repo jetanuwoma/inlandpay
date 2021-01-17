@@ -32,11 +32,11 @@
                     </ul>
                     <%unless user_signed_in? %>
                         <div class="header-btn justify-content-end">
-                            <%= link_to('Account Login', 'sign_in', class: 'bttn-small btn-fill' )%>
+                            <%= link_to('Account Login', :new_user_session, class: 'bttn-small btn-fill' )%>
                         </div>
                     <%end%>
                 </div>
             </div>
         </nav>
-    </header><!--/Header Area-->
+ </header><!--/Header Area-->
     

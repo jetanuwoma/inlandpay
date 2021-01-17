@@ -1,0 +1,13 @@
+.remember-me {
+    display: flex;
+    align-content: center;
+}
+
+.remember-me label {
+    margin-left: 3px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.remember-me label:hover {
+    color: #28df99;
+}
