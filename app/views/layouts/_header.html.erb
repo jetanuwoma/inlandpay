@@ -35,6 +35,11 @@
                             <%= link_to('Account Login', :new_user_session, class: 'bttn-small btn-fill' )%>
                         </div>
                     <%end%>
+                    <%if user_signed_in? %>
+                        <div class="header-btn justify-content-end">
+                            <%= link_to('Logout', :destroy_user_session, class: 'bttn-small btn-fill', method: :delete )%>
+                        </div>
+                    <%end%>
                 </div>
             </div>
         </nav>

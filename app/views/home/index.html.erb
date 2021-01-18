@@ -1,0 +1,38 @@
+    <section class="hero-area gradient-overlay" style="background: url('assets/images/banner/3.jpg') no-repeat center center;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
+                    <div class="hero-content">
+                        <h4><span>Exchange </span> Currency free of charge</h4>
+                        
+                        <ul>
+                            <li>Cupiditate error, ipsa quos quis nam</li>
+                            <li>Odit, voluptatum iure</li>
+                            <li>Dolore ex eligendi asperiores vitae voluptatibus</li>
+                            <li>Psum dolor sit amet consectetur</li>
+                        </ul>
+                        <div class="hero-btn">
+                            <%unless user_signed_in?%>
+                             <%= link_to('Account Login', :new_user_session, class: 'bttn-small btn-fill' )%>
+                            <%end%>
+
+                             <%if user_signed_in?%>
+                             <%= link_to('Dashboard', :new_user_session, class: 'bttn-small btn-fill' )%>
+                            <%end%>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        <div class="hero-bg-alimation">
+            <ul class="box">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </section><!--/Hero Area-->
