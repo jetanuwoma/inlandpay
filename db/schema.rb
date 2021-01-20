@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_18_122703) do
+ActiveRecord::Schema.define(version: 2021_01_20_090321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "currencies", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "symbol", null: false
+    t.string "code", null: false
+    t.string "hundreds_name", default: "one thousand", null: false
+    t.decimal "rate", null: false
+    t.string "logo"
+    t.integer "default", default: 0, null: false
+    t.string "exchange_from", default: "local", null: false
+    t.integer "status", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -40,4 +54,18 @@ ActiveRecord::Schema.define(version: 2021_01_18_122703) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "wallets", force: :cascade do |t|
+    t.decimal "balance", default: "0.0", null: false
+    t.string "number"
+    t.integer "is_default"
+    t.bigint "user_id", null: false
+    t.bigint "currency_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["currency_id"], name: "index_wallets_on_currency_id"
+    t.index ["user_id"], name: "index_wallets_on_user_id"
+  end
+
+  add_foreign_key "wallets", "currencies"
+  add_foreign_key "wallets", "users"
 end
