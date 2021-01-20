@@ -7,5 +7,6 @@ class HomeController < ApplicationController
 
   def account
     @user = helpers.decorate(current_user)
+    @wallets = current_user.wallets
   end
 end

@@ -16,7 +16,6 @@ class Dashboard extends React.Component {
                 <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-20">
                     <div className="card">
                         <div className="card-header">
-                            <img src="assets/images/new-user/1.jpg" alt="" />
                               Profile <a href="profile.html"><i className="ti-arrow-top-right"></i></a>
                         </div>
                         <div className="card-body">
