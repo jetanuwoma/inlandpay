@@ -27,6 +27,8 @@ gem 'rexml'
 
 gem 'devise'
 
+gem 'sidekiq'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -56,6 +58,7 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'rspec-rails'
+  gem 'faker'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'

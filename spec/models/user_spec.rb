@@ -9,7 +9,18 @@ RSpec.describe User, type: :model do
       phone_number: '07032776995',
       password: 'testty'
     )
-    expect(user).to be_valid 
+    expect(user).to be_valid
+  end
+
+  it 'should not be valid when password lenght is less than 6' do
+    user = User.new(
+      email: 'test@gmail.com',
+      first_name: 'test',
+      last_name: 'test',
+      phone_number: '07032776995',
+      password: 'test'
+    )
+    expect(user).to_not be_valid
   end
 
   it 'is not valid without an email' do
