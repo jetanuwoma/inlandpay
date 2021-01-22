@@ -8,4 +8,13 @@ class Wallet < ApplicationRecord
 
   belongs_to :user
   belongs_to :currency
+
+  before_create :assign_number
+
+  private
+
+  def assign_number
+    code = currency.code
+    self.number = rand(10**10) if code == 'NGR'
+  end
 end

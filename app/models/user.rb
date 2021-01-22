@@ -10,4 +10,12 @@ class User < ApplicationRecord
   validates_uniqueness_of :email
 
   has_many :wallets
+  after_create :set_up_wallets
+
+  private
+
+  def set_up_wallets
+    WalletSetupWorker.perform_async(id)
+  end
+
 end
