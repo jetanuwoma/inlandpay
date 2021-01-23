@@ -29,6 +29,10 @@ gem 'devise'
 
 gem 'sidekiq'
 
+gem 'async'
+
+gem 'blockcypher-ruby', '~> 0.2.6'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
