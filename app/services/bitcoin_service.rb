@@ -12,8 +12,9 @@ class BitcoinService
     address = @blockcypher.address_generate
     response = address.with_indifferent_access
     wallet = Wallet.find_by!(currency_id: @currency_id, user_id: @user_id)
-    wallet.number = "#{response[:address]}:#{response[:private]}"
-    wallet.save
+    wallet.number = response[:address]
+    wallet.metadata = address
+    wallet.save!
   rescue StandardError => e
     puts e.message
     false
