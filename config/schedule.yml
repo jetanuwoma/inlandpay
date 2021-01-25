@@ -1,0 +1,4 @@
+bitcoin_balance_job:
+  cron: "*/5 * * * *"
+  class: "BitcoinBalanceWorker"
+  queue: hard_worker
