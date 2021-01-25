@@ -7,6 +7,9 @@ class HomeController < ApplicationController
 
   def account
     @user = helpers.decorate(current_user)
-    @wallets = current_user.wallets
+    @wallets = ActiveModel::SerializableResource.new(
+      current_user.wallets,
+      each_serializer: WalletSerializer
+    ).as_json
   end
 end

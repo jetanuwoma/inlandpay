@@ -2,7 +2,7 @@
 
 # Bitcoin operation service
 class BitcoinService
-  def initialize(user_id:, currency_id: nil)
+  def initialize(user_id: nil, currency_id: nil)
     @user_id = user_id
     @currency_id = currency_id
     @blockcypher = BlockCypher::Api.new(api_token: ENV['BLOCKCYPHER_TOKEN'], network: BlockCypher::TEST_NET_3)
@@ -17,6 +17,13 @@ class BitcoinService
     wallet.save!
   rescue StandardError => e
     puts e.message
+    false
+  end
+
+  def check_balance(address)
+    @blockcypher.address_balance(address)
+  rescue BlockCypher::Api::Error => e
+    puts 'error'
     false
   end
 end
