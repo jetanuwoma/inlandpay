@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   root to: 'home#index'
   get 'account', to: 'home#account', as: 'user_root'
 
+  get 'wallets/:code', to: 'wallets#show', as: :show_wallet
+
   devise_for :users
 
   mount Sidekiq::Web => '/sidekiq'

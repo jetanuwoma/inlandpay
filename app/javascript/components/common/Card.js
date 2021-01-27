@@ -8,7 +8,7 @@ export default class Card extends  React.Component {
           <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-20">
               <div className="card">
                   <div className="card-header">
-                      {code}
+                      <a href={`/wallets/${code}`}>{code}</a>
                   </div>
                   <div className="card-body">
                       <p>{name}</p>
