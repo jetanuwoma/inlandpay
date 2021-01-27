@@ -36,6 +36,7 @@ gem 'sidekiq'
 
 gem 'sidekiq-cron', '~> 1.2.0'
 
+gem 'scout_apm'
 
 gem 'async'
 

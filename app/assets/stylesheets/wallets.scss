@@ -1,0 +1,144 @@
+// Place all the styles related to the wallets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.transaction-list .table {
+  margin-bottom: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+  min-width: 870px;
+}
+
+.transaction-list .table thead {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.transaction-list .table thead tr th {
+  padding: 20px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.transaction-list .table tbody tr {
+  cursor: pointer;
+}
+
+.transaction-list .table tbody tr th {
+  padding: 20px;
+  vertical-align: middle;
+}
+
+.transaction-list .table tbody tr td {
+  font-size: 16px;
+  padding: 15px;
+  vertical-align: middle;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.transaction-list .table tbody tr td strong {
+  font-weight: 500;
+}
+
+.transaction-list .table tbody tr td i {
+  font-size: 18px;
+}
+
+.transaction-list .table tbody tr td span {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.transaction-list .table tbody tr:hover {
+  color: #ffffff;
+}
+
+.transaction-modal-left {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.transaction-modal-left i {
+  font-size: 80px;
+}
+
+.transaction-modal-left h3 {
+  font-size: 20px;
+}
+
+.transaction-modal-left h4 {
+  font-size: 32px;
+  font-weight: 300;
+  color: #28df99;
+}
+
+.transaction-modal-left .completed {
+  padding: 3px 18px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.14);
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.transaction-modal-left .cancelled {
+  padding: 3px 18px;
+  border-radius: 4px;
+  background: rgba(40, 223, 153, 0.14);
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.transaction-modal-details {
+  padding: 20px;
+  max-height: 480px;
+  overflow-y: scroll;
+}
+
+.transaction-modal-details::-webkit-scrollbar {
+  width: 5px;
+}
+
+.transaction-modal-details::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.transaction-modal-details::-webkit-scrollbar-thumb {
+  background: #28df99;
+}
+
+.transaction-modal-details::-webkit-scrollbar-thumb:hover {
+  background: #003754;
+}
+
+.transaction-modal-details .faq-contents .accordion li a {
+  font-size: 18px;
+  padding-left: 40px;
+}
+
+.transaction-modal-details .faq-contents .accordion li a::after {
+  left: 15px;
+  top: 24px;
+  transform: rotate(-45deg);
+}
+
+.transaction-modal-details .faq-contents .accordion li a.active::after {
+  transform: rotate(45deg);
+}
+
+.transaction-modal-details .faq-contents .accordion li p {
+  font-size: 14px;
+  padding-left: 40px;
+  padding-top: 0;
+}

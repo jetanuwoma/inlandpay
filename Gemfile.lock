@@ -67,6 +67,7 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    ast (2.4.2)
     async (1.28.3)
       console (~> 1.10)
       nio4r (~> 2.3)
@@ -165,6 +166,8 @@ GEM
     nokogiri (1.11.1-x86_64-darwin)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    parser (3.0.0.0)
+      ast (~> 2.4.1)
     pg (1.2.3)
     pry (0.13.1)
       coderay (~> 1.1)
@@ -251,6 +254,8 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    scout_apm (4.0.3)
+      parser
     scrypt (3.0.7)
       ffi-compiler (>= 1.0, < 2.0)
     selenium-webdriver (3.142.7)
@@ -331,6 +336,7 @@ DEPENDENCIES
   rexml
   rspec-rails
   sass-rails (>= 6)
+  scout_apm
   selenium-webdriver
   sidekiq
   sidekiq-cron (~> 1.2.0)
