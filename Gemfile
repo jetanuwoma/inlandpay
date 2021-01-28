@@ -42,6 +42,8 @@ gem 'async'
 
 gem 'blockcypher-ruby', '~> 0.2.6'
 
+gem 'paystack'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

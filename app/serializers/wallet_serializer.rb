@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class WalletSerializer < ActiveModel::Serializer
-  attributes :id, :name, :balance, :code
+  attributes :id, :name, :balance, :code, :symbol
   belongs_to :currency
 
   def name
@@ -10,5 +10,9 @@ class WalletSerializer < ActiveModel::Serializer
 
   def code
     object.currency.code
+  end
+
+  def symbol
+    object.currency.symbol
   end
 end

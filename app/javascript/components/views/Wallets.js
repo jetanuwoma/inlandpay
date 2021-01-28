@@ -4,13 +4,24 @@ import Card from "../common/Card";
 
 
 class Wallets extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      amount: 0,
+      requesting: false,
+      token: '',
+    }
+  }
 
   componentDidMount() {
-    console.log(this.props);
+    const token = document.querySelector("meta[name='csrf-token']").getAttribute("content");
+    this.setState({ token })
   }
 
   render () {
-    const { user, wallet } = this.props;
+    const { wallet } = this.props;
+    const { token } = this.state;
     return (
       <React.Fragment>
         <section className="section-padding-sm-2 blue-bg">
@@ -39,8 +50,23 @@ class Wallets extends React.Component {
                     )}
                   </div>
                   <div className="card-body">
-
-                    <a href="" className="bttn-small btn-fill"><i className="ti-user"></i>Deposit</a>
+                    <div className="site-form mb-30">
+                      <form action={`/wallets/${wallet.code}/deposit`} method="POST">
+                        <input type="hidden" name="authenticity_token" value={token}/>
+                        <div className="row">
+                          <div className="col-xl-12 col-lg-12 col-sm-12">
+                            <input
+                              type="text"
+                              placeholder="Amount"
+                              name="amount"
+                            />
+                          </div>
+                          <div className="col-xl-12 col-lg-12 col-sm-12">
+                            <button type="submit" className="bttn-mid btn-fill w-100" >Deposit</button>
+                          </div>
+                        </div>
+                    </form >
+                   </div>
                   </div>
                 </div>
                 <div className="card mb-30">
