@@ -5,8 +5,9 @@ class BitcoinBalanceWorker
   include Sidekiq::Worker
 
   def perform
-    btc = Currency.find_by(code: 'BTC')
-    addresses = Wallet.where(currencies: btc).where.not(number: nil).pluck(:number, :balance)
+    addresses = Wallet.includes(:currency)
+                      .where({ currencies: { code: 'BTC' } })
+                      .where.not(number: nil).pluck(:number, :balance)
     Async do
       addresses.each do |addrs, amount|
         Async do

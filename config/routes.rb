@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'account', to: 'home#account', as: 'user_root'
 
   get 'wallets/:code', to: 'wallets#show', as: :show_wallet
+  post 'wallets/:code/deposit', to: 'wallets#deposit', as: :deposit_wallet
+  get 'verify/deposit', to: 'wallets#verify', as: :verify_deposit
 
   devise_for :users
 

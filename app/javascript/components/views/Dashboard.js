@@ -28,12 +28,21 @@ class Dashboard extends React.Component {
                     </div>
                 </div>
               {wallets.map((item) => (
-                <Card
+                <div
+                  className="col-xl-4 col-lg-4 col-md-6 col-sm-6"
                   key={item.code}
-                  name={item.name}
-                  balance={item.balance}
-                  code={item.code}
-                />
+                >
+                  <div className="single-jackpot">
+                    <a href={`/wallets/${item.code}`}>
+                        <div className="content">
+                          <div className="name">{item.name}</div>
+                          <div className="price-play">{item.symbol}{item.balance} <span><i className="fa fa-play"></i></span></div>
+                          <div className="mrp">{item.code}</div>
+                          <span className="bttn-small btn-fill w-100">Open</span>
+                        </div>
+                    </a>
+                  </div>
+                </div>
               ))}
             </div>
         </div>
@@ -49,7 +58,8 @@ Dashboard.propTypes = {
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     balance: PropTypes.number.isRequired,
-    code: PropTypes.string.isRequired
+    code: PropTypes.string.isRequired,
+    symbol: PropTypes.string.isRequired,
   })
 }
 
