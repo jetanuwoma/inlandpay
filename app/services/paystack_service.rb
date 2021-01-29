@@ -17,9 +17,10 @@ class PaystackService
       amount: amount,
       email: @user.email
     )
-    puts 'testing ---------'
-    puts result['data']['authorization_url']
-    auth_url = result['data']['authorization_url']
+    result['data']['authorization_url']
+  rescue StandardError => e
+    puts e
+    false
   end
 end
 

@@ -1,6 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
+
 import Card from "../common/Card";
+import Api from "../../utils/Api";
 
 
 class Wallets extends React.Component {
@@ -19,9 +21,49 @@ class Wallets extends React.Component {
     this.setState({ token })
   }
 
+  onAmountChange = (event) => {
+    this.setState({ amount: event.target.value })
+  }
+
+  onFormSubmit = (event) => {
+    event.preventDefault();
+    this.setState({ requesting: true });
+    const { token, amount } = this.state;
+    const { wallet } = this.props;
+    const data = {
+      amount,
+    }
+    Api.Transaction.createTransaction(`/wallets/${wallet.code}/deposit`, data, token)
+      .then((response) => {
+        if (response.data.url !== undefined) {
+          this.setState({ requesting: false })
+          window.location = response.data.url
+        }
+      }).catch((error) => {
+      this.setState({ requesting: false })
+        alert('Error initiating deposit')
+    })
+  }
+
   render () {
     const { wallet } = this.props;
-    const { token } = this.state;
+    const { token, amount, requesting } = this.state;
+    if (requesting) {
+      return (
+        <div className="preloader">
+          <div className="lds-roller">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      )
+    }
     return (
       <React.Fragment>
         <section className="section-padding-sm-2 blue-bg">
@@ -51,18 +93,19 @@ class Wallets extends React.Component {
                   </div>
                   <div className="card-body">
                     <div className="site-form mb-30">
-                      <form action={`/wallets/${wallet.code}/deposit`} method="POST">
-                        <input type="hidden" name="authenticity_token" value={token}/>
+                      <form onSubmit={this.onFormSubmit}>
                         <div className="row">
                           <div className="col-xl-12 col-lg-12 col-sm-12">
                             <input
                               type="text"
                               placeholder="Amount"
                               name="amount"
+                              value={amount}
+                              onChange={this.onAmountChange}
                             />
                           </div>
                           <div className="col-xl-12 col-lg-12 col-sm-12">
-                            <button type="submit" className="bttn-mid btn-fill w-100" >Deposit</button>
+                            <button type="submit" className="bttn-mid btn-fill w-100" disabled={requesting}>Deposit</button>
                           </div>
                         </div>
                     </form >

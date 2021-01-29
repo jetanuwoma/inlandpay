@@ -1,5 +1,6 @@
 class WalletsController < ApplicationController
   before_action :authenticate_user!, :validate_wallet
+  skip_before_action :validate_wallet, only: [:verify]
 
   def show
     @user = helpers.decorate(current_user)
@@ -10,11 +11,15 @@ class WalletsController < ApplicationController
   end
 
   def deposit
-    PaystackService.new(
-      user: current_user,
-      wallet: @wallet,
-      currency: @currency
-    ).deposit_funds(40000)
+    url = PaystackService.new(user: current_user,
+                              wallet: @wallet,
+                              currency: @currency).deposit_funds(params[:amount])
+    json_response(data: { url: url })
+  end
+
+  def verify
+    puts params
+
   end
 
   private
@@ -29,9 +34,5 @@ class WalletsController < ApplicationController
 
   def validate_wallet
     redirect_to(root_path) unless wallet
-  end
-
-  def deposit_params
-    params.permit(:amount)
   end
 end
