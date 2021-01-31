@@ -9,6 +9,7 @@ class Wallet < ApplicationRecord
 
   belongs_to :user
   belongs_to :currency
+  has_many :transactions
 
   before_create :assign_number
   after_create :generate_btc_address
