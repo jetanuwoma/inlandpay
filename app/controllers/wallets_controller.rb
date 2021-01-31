@@ -11,15 +11,13 @@ class WalletsController < ApplicationController
   end
 
   def deposit
-    url = PaystackService.new(user: current_user,
-                              wallet: @wallet,
-                              currency: @currency).deposit_funds(params[:amount])
+    url = paystack.deposit_funds(params[:amount])
     json_response(data: { url: url })
   end
 
   def verify
-    puts params
-
+    paystack.verify_transaction(params[:trxref])
+    redirect_to user_root_url
   end
 
   private
@@ -30,6 +28,12 @@ class WalletsController < ApplicationController
 
   def currency
     @currency ||= Currency.find_by(code: params[:code])
+  end
+
+  def paystack
+    PaystackService.new(user: current_user,
+                        wallet: @wallet,
+                        currency: @currency)
   end
 
   def validate_wallet
