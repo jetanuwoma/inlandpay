@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates_uniqueness_of :email
 
   has_many :wallets
-  after_create :set_up_wallets
+  after_create :publish_to_account
 
   private
 
@@ -18,4 +18,7 @@ class User < ApplicationRecord
     WalletSetupWorker.perform_async(id)
   end
 
+  def publish_to_account
+    Publisher.publish('paygate', attributes)
+  end
 end
