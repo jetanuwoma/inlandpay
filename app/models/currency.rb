@@ -10,4 +10,8 @@ class Currency < ApplicationRecord
   def self.code_to_symbol(code)
     where(code: code).first.symbol
   end
+
+  def self.exchange(amount)
+    rate * amount
+  end
 end

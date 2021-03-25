@@ -30,6 +30,8 @@ gem 'fast_jsonapi'
 
 gem 'rexml'
 
+gem 'bunny'
+
 gem 'devise'
 
 gem 'sidekiq'
@@ -43,6 +45,10 @@ gem 'async'
 gem 'blockcypher-ruby', '~> 0.2.6'
 
 gem 'paystack'
+
+gem 'aws-sdk-rails'
+
+gem 'acl9', '~> 3.2'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
